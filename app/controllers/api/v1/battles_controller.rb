@@ -1,4 +1,4 @@
-class BattlesController < ApplicationController
+class Api::V1::BattlesController < ApplicationController
 
   def create
   end
