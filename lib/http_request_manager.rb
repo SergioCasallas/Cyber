@@ -3,7 +3,7 @@ require 'net/http'
 
 class HttpRequestManager
 
-  TOKEN = "b7e2db3a-08b2-41ce-bdf7-fdb4594757db"
+  TOKEN = ENV['TOKEN']
 
   attr_accessor :url, :token
 
