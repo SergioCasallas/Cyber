@@ -9,6 +9,7 @@ gem 'puma', '~> 5.0'
 gem 'webpacker', '~> 5.0'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'fast_inserter', '~> 0.1.6'
 
 group :development do
   gem 'web-console', '>= 4.1.0'
