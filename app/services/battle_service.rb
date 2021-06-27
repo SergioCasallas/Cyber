@@ -2,7 +2,7 @@ module BattleService
 
   LIMIT = 30
 
-  def self.call(data: nil)
+  def self.call(data)
     create_sensors(data)
     battle_id = BattleManager.get_battle_id
     data_sensors = get_data_sensors(battle_id)
