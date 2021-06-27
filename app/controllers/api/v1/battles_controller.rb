@@ -1,9 +1,9 @@
 class Api::V1::BattlesController < ApplicationController
 
   def create
-    puts "#" 100
+    puts "#" * 100
     puts "#{data_params}"
-    puts "#" 100
+    puts "#" * 100
     BattleService.(data_params)
   end
 
