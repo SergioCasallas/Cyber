@@ -7,9 +7,6 @@ module BattleService
     battle_id = BattleManager.get_battle_id
     data_sensors = get_data_sensors(battle_id)
     data_json = build_data_json(data_sensors)
-    puts "=" * 100
-    puts "#{data_json}"
-    puts "=" * 100
   end
 
   def self.create_sensors(data_battle)
