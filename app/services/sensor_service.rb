@@ -4,6 +4,10 @@ module SensorService
     data_battle_array = transform_battle_in_array(data_battle)
     time, data_battle_array = get_time(data_battle_array)
     data_sensor = transform_data_sensors_in_array(data_battle_array)
+    puts "=" * 100
+    puts "#{data_battle}"
+    puts "#{data_sensor}"
+    puts "=" * 100
     data_sensor.map.with_index do |(ship, result), _index|
       [
         get_battle_id,
