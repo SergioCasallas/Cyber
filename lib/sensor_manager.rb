@@ -1,11 +1,9 @@
 class SensorManager
 
-  def self.transform_battle_in_array(battle)
-    battle.split(",") if battle.present?
-  end
+  COLUMNS = %w(battle_id ship_id result time position)
 
-  def self.transform_battle_in_array(data_battle)
-    data_battle.map { |sensor| sensor[1..-2].split("|") }
+  def self.transform_data_sensors_in_array(data_sensors)
+    data_sensors.map { |sensor| sensor[1..-2].split("|") } if data_sensors.present?
   end
 
 end
