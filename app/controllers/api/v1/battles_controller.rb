@@ -10,6 +10,6 @@ class Api::V1::BattlesController < ApplicationController
   private
 
   def payload_params
-    params.permit(:payload).deep_transform_keys { |key| key.to_sym }
+    params.permit(:payload)
   end
 end
