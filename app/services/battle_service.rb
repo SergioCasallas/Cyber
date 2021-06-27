@@ -2,8 +2,11 @@ module BattleService
 
   LIMIT = 30
 
-  def self.call(payload: nil)
-    create_sensors(payload)
+  def self.call(data: nil)
+    puts "=" * 200
+    puts "#{data}"
+    puts "=" * 200
+    create_sensors(data)
     battle_id = BattleManager.get_battle_id
     data_sensors = get_data_sensors(battle_id)
     data_json = build_data_json(data_sensors)
