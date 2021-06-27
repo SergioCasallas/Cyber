@@ -1,4 +1,6 @@
-module BattleService
+require 'securerandom'
+
+module SensorService
 
   LIMIT_SECONDS = 90
 
@@ -18,7 +20,7 @@ module BattleService
   end
 
   def self.transform_battle_in_array(battle = nil)
-    BattleManager.transform_battle_in_array(battle)
+    SensorManager.transform_battle_in_array(battle)
   end
 
   def self.get_time(data_battle = nil)
@@ -27,12 +29,16 @@ module BattleService
   end
 
   def self.transform_data_sensor_in_array(data_battle = nil)
-    BattleManager.transform_battle_in_array(data_battle)
+    SensorManager.transform_battle_in_array(data_battle)
   end
 
   def self.get_battle_id
     battle = Battle.where(created_at: LIMIT_SECONDS.seconds..Time.zone.now).first
-    battle.present? ? battle.id : Battle.create(name: "").id
+    battle.present? ? battle.id : Battle.create(name: get_name).id
+  end
+
+  def self.get_name
+    SecureRandom.hex(10)
   end
 
   def self.get_ship_id(ship)

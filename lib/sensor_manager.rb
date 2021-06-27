@@ -1,4 +1,4 @@
-class BattleManager
+class SensorManager
 
   def self.transform_battle_in_array(battle)
     battle.split(",") if battle.present?
