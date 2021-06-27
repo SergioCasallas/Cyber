@@ -7,6 +7,6 @@ class Api::V1::BattlesController < ApplicationController
   private
 
   def payload_params
-    params.permit(:payload).deep_symbolize_keys
+    params.permit(:payload).deep_transform_keys { |key| key.to_sym }
   end
 end
